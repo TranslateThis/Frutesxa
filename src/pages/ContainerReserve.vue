@@ -15,10 +15,15 @@
             b-input(v-model="OTLineInput") 
       .columns
         .column.is-12
-          button.button(@click="toggleDialog") Scanear Codigo
+          a.button(@click="toggleDialog") Scanear Codigo
       .columns(v-for="(quantity, index) in items")
-        .column.is-12.is-mobile-12
-          input.input(disabled, v-for="qr in qrContent", v-model="qr.id")
+        .column.is-8.is-mobile-8
+          .field.has-addons
+            .control
+              input.input(type="text", v-for="qr in qrContent", v-model="qr.id", disabled)
+            .control
+              a.button.is-primary
+                i.mdi.mdi-close
       .columns
         .column
           a.button.is-light(@click="validateReserve") Reservar
@@ -38,7 +43,7 @@
       return {
         isDialogActive: '',
         qrContent: [],
-        items: 1,
+        items: 0,
         stageSelected: undefined,
         processSelected: undefined,
         OTLineInput: undefined,
@@ -73,6 +78,9 @@
     methods: {
       addItem() {
         this.items = this.items + 1;
+      },
+      deleteItem() {
+        this.items = this.items - 1;
       },
       validateReserve() {
         if (this.qrContent.length === 0) {
