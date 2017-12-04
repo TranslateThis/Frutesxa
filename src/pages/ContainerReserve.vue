@@ -1,20 +1,20 @@
 <template lang="pug">
   .section
     .Container
-      .columns.is-mobile
-        .column.is-mobile
+      .columns
+        .column.is-12.is-mobile-12
           b-field(label="Estado")
             b-select(placeholder="Seleccionar", required)
               option Opcion 1
               option Opcion 2
               option Opcion 3
-        .column.is-mobile
+        .column.is-12.is-mobile-12
           b-field(label="Etapa")
             b-select(placeholder="Seleccionar", required)
               option Opcion 1
               option Opcion 2
               option Opcion 3
-        .column.is-mobile
+        .column.is-12.is-mobile-12
           b-field(label="Linea de OT")
             b-select(placeholder="Seleccionar", required)
               option Opcion 1
