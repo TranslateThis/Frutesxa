@@ -1,29 +1,29 @@
 <template lang="pug">
   .section
     .Container
-      b-field(label="Estado")
-        b-select(placeholder="Seleccionar", required)
-          option Opcion 1
-          option Opcion 2
-          option Opcion 3
-      b-field(label="Etapa")
-        b-select(placeholder="Seleccionar", required)
-          option Opcion 1
-          option Opcion 2
-          option Opcion 3
-      b-field(label="Linea de OT")
-        b-select(placeholder="Seleccionar", required)
-          option Opcion 1
-          option Opcion 2
-          option Opcion 3
-
+      .columns.is-mobile
+        .column
+          b-field(label="Estado")
+            b-select(placeholder="Seleccionar", required)
+              option Opcion 1
+              option Opcion 2
+              option Opcion 3
+        .column
+          b-field(label="Etapa")
+            b-select(placeholder="Seleccionar", required)
+              option Opcion 1
+              option Opcion 2
+              option Opcion 3
+        .column
+          b-field(label="Linea de OT")
+            b-select(placeholder="Seleccionar", required)
+              option Opcion 1
+              option Opcion 2
+              option Opcion 3
       .columns.is-mobile(v-for="(quantity, index) in items")
-        .column.is-2
-          a.button(@click="addItem") Agregar
-        .column.is-6
-          input.input(disabled, v-model="qrContent[index]")
-        .column.is-4
-          button.button(@click="toggleDialog") Scanear Codigo
+        button.button(@click="toggleDialog") Scanear Codigo
+        .column.is-mobile.is-12
+          input.input(disabled, v-for="qr in qrContent", v-model="qr.id")
       .columns
         .column
           a.button.is-light(@click="validateReserve") Reservar
@@ -65,7 +65,7 @@
         }
       },
       onDecode(content) {
-        this.qrContent = content;
+        this.qrContent.push({ id: content });
         this.paused = true;
         this.toggleDialog();
       },

@@ -6,27 +6,27 @@ import ContainerReserve from './../pages/ContainerReserve.vue';
 
 const routes = [
   {
-    path: '',
+    path: '/',
     component: Home,
     name: 'home',
   },
   {
-    path: 'containerView',
+    path: '/containerView',
     component: ContainerView,
     name: 'containerView',
   },
   {
-    path: 'containerView/:id',
+    path: '/containerView/:id',
     component: ContainerViewDetails,
     name: 'containerViewDetails',
   },
   {
-    path: 'containerReserve',
+    path: '/containerReserve',
     component: ContainerReserve,
     name: 'containerReserve',
   },
   {
-    path: 'about',
+    path: '/about',
     component: About,
     name: 'about',
   },
