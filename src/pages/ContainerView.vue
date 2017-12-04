@@ -6,8 +6,8 @@
           h1.title Consulta de Contenedor
       .columns.is-mobile
         .column
-          qrcode-reader(@decode="onDecode" @locate="onLocate") decime si lo lee
-
+          qrcode-reader(@decode="onDecode", @locate="onLocate")
+            .decoded-content {{content}}
       .columns
         .column
           router-link.button(:to='"/containerView/"+id') Confirmar
@@ -16,8 +16,11 @@
 </template>
 
 <script>
+  import { QrcodeReader } from 'vue-qrcode-reader';
+
   export default {
     name: 'Container',
+    components: { QrcodeReader },
     data() {
       return {
         id: '',
@@ -46,8 +49,8 @@
           // hide loading indicator
         }
       },
-      onDecode() {
-        // ...
+      onDecode(content) {
+        this.content = content;
       },
 
       onLocate() {
