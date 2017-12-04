@@ -3,7 +3,7 @@
   .sidebar(:style="'min-height: '+height+'px'", :class="{ active: active }")
     .nav-side-menu
       .brand 
-        span Brand Logo
+        span Frutesxa
         button(class="navbar-burger", @click="toggle()")
           span
           span
@@ -33,16 +33,30 @@
         }, {
           name: 'Contenedor',
           url: '/',
-          icon: 'mdi-archive',
           childrens: [{
-            name: 'Consulta',
+            name: 'Consulta de ID',
             url: '/containerView',
           }, {
-            name: 'Reservar',
+            name: 'Reservar para OT',
+            url: '/containerReserve',
+          }, {
+            name: 'Ingresar a OT',
             url: '/containerReserve',
           }],
         }, {
-          name: 'About',
+          name: 'Inventario de Contendedores',
+          url: '/About',
+          icon: 'mdi-archive',
+        }, {
+          name: 'Inventario de Insumos',
+          url: '/About',
+          icon: 'mdi-chart-line',
+        }, {
+          name: 'Packing List',
+          url: '/About',
+          icon: 'mdi-chart-timeline',
+        }, {
+          name: 'About Us',
           url: '/About',
           icon: 'mdi-account-multiple',
         }],

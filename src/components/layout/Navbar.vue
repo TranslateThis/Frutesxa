@@ -16,7 +16,7 @@ nav.navbar
                     i.mdi.mdi-bell-outline
               p.control
                  a.button.is-primary.is-inverted.is-outlined
-                  img(src="./../../assets/logo.png") 
+                  img(src="./../../assets/UserLogo.png") 
                   span Usuario
                   span.icon
                     i.mdi.mdi-chevron-down

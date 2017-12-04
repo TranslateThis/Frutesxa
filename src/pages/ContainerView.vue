@@ -6,59 +6,60 @@
           h1.title Consulta de Contenedor
       .columns.is-mobile
         .column
-          qrcode-reader(@decode="onDecode", @init="onInit") Lee algo?
-            .decoded-content(v-if="content") {{content}}
+          input.input(disabled, v-model="qrContent")
+        .column
+          a.button(@click="toggleDialog") Scanear Codigo
       .columns
         .column
-          router-link.button(to="/container") Confirmar
-            
+          router-link.button(:to='"/containerView/" + qrContent') Consultar
+  
+    .modal(:class="isDialogActive")
+      .modal-background
+      .modal-content
+        qrcode-reader(@decode="onDecode", @init="onInit", :paused="paused" )  QR Scaner
 
 </template>
 
 <script>
-
   export default {
     name: 'Container',
     data() {
       return {
+        isDialogActive: '',
+        qrContent: null,
+        paused: false,
       };
     },
     methods: {
-      async onInit(promise) {
-        console.log('OnInit');
-
-        try {
-          await promise;
-          // successfully initialized
-          console.log('try');
-        } catch (error) {
-          if (error.name === 'NotAllowedError') {
-            // user denied camera access permisson
-            console.log('NotAllowedError');
-          } else if (error.name === 'NotFoundError') {
-            // no suitable camera device installed
-            console.log('NotFoundError');
-          } else if (error.name === 'NotSupportedError') {
-            // page is not served over HTTPS (or localhost)
-            console.log('NotSupportedError');
-          } else if (error.name === 'NotReadableError') {
-            // maybe camera is already in use
-            console.log('NotReadableError');
-          } else {
-            // browser is probably lacking features (WebRTC, Canvas)
-            console.log('featuresNot');
-          }
-        } finally {
-          // hide loading indicator
+      toggleDialog() {
+        if (this.isDialogActive === 'is-active') {
+          this.isDialogActive = '';
+          this.qrContent = '112311231';
+        } else {
+          this.isDialogActive = 'is-active';
         }
       },
       onDecode(content) {
-        this.content = content;
+        this.qrContent = content;
+        this.paused = true;
+        this.toggleDialog();
       },
     },
   };
 </script>
 
 <style scoped>
-
+.decoded-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  padding: 0px 20px;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  background-color: rgba(0,0,0,.5);
+}
 </style>

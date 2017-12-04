@@ -1,8 +1,8 @@
 <template lang="pug">
-.column
-    vl-navbar
-    .main(:style="'min-height: '+height+'px'")
-        router-view
+  .column
+      vl-navbar
+      .main(:style="'min-height: '+height+'px'")
+          router-view
 </template>
 
 <script>

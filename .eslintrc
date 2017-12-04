@@ -2,8 +2,7 @@
     "extends": "airbnb-base",
     "plugins": ["html"],
     "rules": {
-        "no-new": 0,
-        "linebreak-style": 0
+        "no-new": 0
     },
     "env": {
         "browser": true,

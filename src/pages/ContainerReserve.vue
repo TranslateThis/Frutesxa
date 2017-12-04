@@ -1,79 +1,70 @@
 <template lang="pug">
   .section
     .Container
-      .field
-        .label Proceso:
-        .control
-          .select
-            select
-              option Opcion 1
-              option Opcion 2
-              option Opcion 3
-      .field
-        .label Etapa: 
-        .control
-          .select
-            select
-              option Opcion 1
-              option Opcion 2
-              option Opcion 3
-      .field
-        .label OT: // Linea de OT
-        .control
-          .select
-            select
-              option Opcion 1
-              option Opcion 2
-              option Opcion 3
+      b-field(label="Estado")
+        b-select(placeholder="Seleccionar", required)
+          option Opcion 1
+          option Opcion 2
+          option Opcion 3
+      b-field(label="Etapa")
+        b-select(placeholder="Seleccionar", required)
+          option Opcion 1
+          option Opcion 2
+          option Opcion 3
+      b-field(label="Linea de OT")
+        b-select(placeholder="Seleccionar", required)
+          option Opcion 1
+          option Opcion 2
+          option Opcion 3
+
       .columns.is-mobile
+        a.button
+          span.icon.is-small 
         .column
-          input.input(placeholder="Ingrese Codigo QR", v-model="id")
+          input.input(disabled, v-model="qrContent")
+        .column
+          button.button(@click="toggleDialog") Scanear Codigo
       .columns
         .column
-          button.button(@click="showTime") Confirmar
+          a.button.is-light(@click="validateReserve") Reservar
 
-      
-      div
-        vue-toast(ref="toast")
+    .modal(:class="isDialogActive")
+      .modal-background
+      .modal-content
+        qrcode-reader(@decode="onDecode", @init="onInit", :paused="paused" )  QR Scaner
 
 </template>
 
 <script>
-  import VueToast from 'vue-toast';
-  import 'vue-toast/dist/vue-toast.min.css';
 
   export default {
     name: 'ContainerReserve.vue',
-    components: { VueToast },
     data() {
       return {
-        maxToasts: 6,
-        position: 'bottom right',
-        theme: 'success',
-        timeLife: 3000,
-        closeBtn: true,
+        isDialogActive: '',
+        qrContent: '',
+        paused: false,
       };
     },
-    watch: {
-      'delayOfJumps + maxToasts + position': 'resetOptions',
-    },
-    attached() {
-      this.resetOptions();
-    },
     methods: {
-      resetOptions() {
-        this.$root.$refs.toast.setOptions({
-          delayOfJumps: this.delayOfJumps,
-          maxToasts: this.maxToasts,
-          position: this.position,
+      validateReserve() {
+        this.$toast.open({
+          message: 'Lote de Contenedores Creado Correctamente',
+          type: 'is-success',
         });
       },
-      showTime() {
-        this.$root.$refs.toast.showToast('hollou', {
-          theme: this.theme,
-          timeLife: this.timeLife,
-          closeBtn: this.closeBtn,
-        });
+      toggleDialog() {
+        if (this.isDialogActive === 'is-active') {
+          this.isDialogActive = '';
+          this.qrContent = '112311231';
+        } else {
+          this.isDialogActive = 'is-active';
+        }
+      },
+      onDecode(content) {
+        this.qrContent = content;
+        this.paused = true;
+        this.toggleDialog();
       },
     },
   };
@@ -83,4 +74,5 @@
 .select {
   position: relative;
 }
+
 </style>

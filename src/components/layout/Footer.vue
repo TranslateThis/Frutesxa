@@ -1,6 +1,7 @@
 <template lang="pug">
-  footer.footer
+  .footer
     p QPlus 2017 - All rights Reserved
+    
 </template>
 
 <script>
