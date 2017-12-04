@@ -34,7 +34,6 @@
       toggleDialog() {
         if (this.isDialogActive === 'is-active') {
           this.isDialogActive = '';
-          this.qrContent = '112311231';
         } else {
           this.isDialogActive = 'is-active';
         }

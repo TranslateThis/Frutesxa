@@ -17,12 +17,12 @@
           option Opcion 2
           option Opcion 3
 
-      .columns.is-mobile
-        a.button
-          span.icon.is-small 
-        .column
-          input.input(disabled, v-model="qrContent")
-        .column
+      .columns.is-mobile(v-for="(quantity, index) in items")
+        .column.is-2
+          a.button(@click="addItem") Agregar
+        .column.is-6
+          input.input(disabled, v-model="qrContent[index]")
+        .column.is-4
           button.button(@click="toggleDialog") Scanear Codigo
       .columns
         .column
@@ -42,11 +42,15 @@
     data() {
       return {
         isDialogActive: '',
-        qrContent: '',
+        qrContent: [],
         paused: false,
+        items: 1,
       };
     },
     methods: {
+      addItem() {
+        this.items = this.items + 1;
+      },
       validateReserve() {
         this.$toast.open({
           message: 'Lote de Contenedores Creado Correctamente',
@@ -56,7 +60,6 @@
       toggleDialog() {
         if (this.isDialogActive === 'is-active') {
           this.isDialogActive = '';
-          this.qrContent = '112311231';
         } else {
           this.isDialogActive = 'is-active';
         }
