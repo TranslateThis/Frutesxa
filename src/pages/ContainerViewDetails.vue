@@ -5,52 +5,52 @@
       .columns
         .column.is-6
           label ID:
-          input.input.is-info(disabled, v-model="info.Id")
+          input.input(disabled, v-model="info.Id")
         .column.is-6
           label Item: 
-          input.input.is-info(disabled, v-model="info.Item")
+          input.input(disabled, v-model="info.Item")
       .columns
         .column.is-6
           label Version:
-          input.input.is-info(disabled, v-model="info.Version")
+          input.input(disabled, v-model="info.Version")
         .column.is-6
           label Cosecha:
-          input.input.is-info(disabled, v-model="info.Cosecha")
+          input.input(disabled, v-model="info.Cosecha")
       .columns
         .column.is-6
           label Tipo:
-          input.input.is-info(disabled, v-model="info.Tipo")
+          input.input(disabled, v-model="info.Tipo")
         .column.is-6
           label Envase
-          input.input.is-info(disabled, v-model="info.Envase")
+          input.input(disabled, v-model="info.Envase")
       .columns
         .column.is-6
           label Proceso:
-          input.input.is-info(disabled, v-model="info.Proceso")
+          input.input(disabled, v-model="info.Proceso")
         .column.is-6
           label Estado:
-          input.input.is-info(disabled, v-model="info.Estado")
+          input.input(disabled, v-model="info.Estado")
       .columns
         .column.is-6
           label Sub-Estado:
-          input.input.is-info(disabled, v-model="info.SubEstado")
+          input.input(disabled, v-model="info.SubEstado")
         .column.is-6
           label OT:
-          input.input.is-info(disabled, v-model="info.OT")
+          input.input(disabled, v-model="info.OT")
       .columns
         .column.is-6
           label Neto:
-          input.input.is-info(disabled, v-model="info.Neto")
+          input.input(disabled, v-model="info.Neto")
         .column.is-6
           label Lote:
-          input.input.is-info(disabled, v-model="info.Lote") 
+          input.input(disabled, v-model="info.Lote") 
       .columns
         .column.is-6
           label Fecha Alta:
-          input.input.is-info(disabled, v-model="info.FechaAlta")
+          input.input(disabled, v-model="info.FechaAlta")
         .column.is-6
           label Almacen:
-          input.input.is-info(disabled, v-model="info.Almacen")  
+          input.input(disabled, v-model="info.Almacen")  
       .columns
         .column.is-12
           label Descripción:

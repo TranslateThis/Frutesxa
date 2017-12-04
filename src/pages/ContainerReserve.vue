@@ -4,35 +4,15 @@
       .columns
         .column.is-4.is-mobile-12
           b-field(label="Proceso")
-            b-select(placeholder="Seleccionar", required)
-              option Almendras
-              option Castaña
-              option Cir
-              option Damasco
-              option Mani
-              option Manzana
-              option MixFruta
-              option Nuez
-              option Pasa
-              option Pistacho
-              option Rubia
+            b-select(placeholder="Seleccionar", v-model="processSelected", required)
+              option(v-for="proceso in Procesos", :value="proceso.Id", :key="proceso.Id") {{proceso.Name}}
         .column.is-4.is-mobile-12
           b-field(label="Etapa")
-            b-select(placeholder="Seleccionar", required)
-              option Calibrado
-              option Envasado
-              option EnvasadoRetail
-              option Fresca
-              option Horno
-              option Laser
-              option Partido
-              option Procesamiento
-              option Recepcion
-              option Secado
-              option Selenv
+            b-select(placeholder="Seleccionar", v-model="stageSelected", required)
+              option(v-for="etapa in Etapas", :value="etapa.Id", :key="etapa.Id") {{etapa.Name}}
         .column.is-4.is-mobile-12
           b-field(label="Linea de OT")
-            b-input 
+            b-input(v-model="OTLineInput") 
       .columns
         .column.is-12
           button.button(@click="toggleDialog") Scanear Codigo
@@ -59,6 +39,35 @@
         isDialogActive: '',
         qrContent: [],
         items: 1,
+        stageSelected: undefined,
+        processSelected: undefined,
+        OTLineInput: undefined,
+        Procesos: [
+          { Id: 1, Name: 'Almendras' },
+          { Id: 2, Name: 'Castaña' },
+          { Id: 3, Name: 'Cir' },
+          { Id: 4, Name: 'Damasco' },
+          { Id: 5, Name: 'Mani' },
+          { Id: 6, Name: 'Manzana' },
+          { Id: 7, Name: 'MixFruta' },
+          { Id: 8, Name: 'Nuez' },
+          { Id: 9, Name: 'Pasa' },
+          { Id: 10, Name: 'Pistacho' },
+          { Id: 11, Name: 'Rubia' },
+        ],
+        Etapas: [
+          { Id: 1, Name: 'Calibrado' },
+          { Id: 2, Name: 'Envasado' },
+          { Id: 3, Name: 'EnvasadoRetail' },
+          { Id: 4, Name: 'Fresca' },
+          { Id: 5, Name: 'Horno' },
+          { Id: 6, Name: 'Laser' },
+          { Id: 7, Name: 'Partido' },
+          { Id: 8, Name: 'Procesamiento' },
+          { Id: 9, Name: 'Recepcion' },
+          { Id: 10, Name: 'Secado' },
+          { Id: 11, Name: 'Selenv' },
+        ],
       };
     },
     methods: {
@@ -72,6 +81,9 @@
             type: 'is-danger',
           });
         } else {
+          this.stageSelected = undefined;
+          this.processSelected = undefined;
+          this.OTLineInput = undefined;
           this.$toast.open({
             message: 'Lote de Contenedores Creado Correctamente',
             type: 'is-success',
