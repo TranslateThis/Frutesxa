@@ -16,7 +16,7 @@
     .modal(:class="isDialogActive")
       .modal-background
       .modal-content
-        qrcode-reader(@decode="onDecode", @init="onInit", :paused="paused" )  QR Scaner
+        qrcode-reader(@decode="onDecode")  QR Scaner
 
 </template>
 
@@ -27,7 +27,6 @@
       return {
         isDialogActive: '',
         qrContent: null,
-        paused: false,
       };
     },
     methods: {
@@ -40,7 +39,6 @@
       },
       onDecode(content) {
         this.qrContent = content;
-        this.paused = true;
         this.toggleDialog();
       },
     },

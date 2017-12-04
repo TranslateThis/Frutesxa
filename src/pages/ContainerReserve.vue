@@ -3,26 +3,41 @@
     .Container
       .columns
         .column.is-4.is-mobile-12
-          b-field(label="Estado")
+          b-field(label="Proceso")
             b-select(placeholder="Seleccionar", required)
-              option Opcion 1
-              option Opcion 2
-              option Opcion 3
+              option Almendras
+              option Castaña
+              option Cir
+              option Damasco
+              option Mani
+              option Manzana
+              option MixFruta
+              option Nuez
+              option Pasa
+              option Pistacho
+              option Rubia
         .column.is-4.is-mobile-12
           b-field(label="Etapa")
             b-select(placeholder="Seleccionar", required)
-              option Opcion 1
-              option Opcion 2
-              option Opcion 3
+              option Calibrado
+              option Envasado
+              option EnvasadoRetail
+              option Fresca
+              option Horno
+              option Laser
+              option Partido
+              option Procesamiento
+              option Recepcion
+              option Secado
+              option Selenv
         .column.is-4.is-mobile-12
           b-field(label="Linea de OT")
-            b-select(placeholder="Seleccionar", required)
-              option Opcion 1
-              option Opcion 2
-              option Opcion 3
-      .columns.is-mobile(v-for="(quantity, index) in items")
-        button.button(@click="toggleDialog") Scanear Codigo
-        .column.is-mobile.is-12
+            b-input 
+      .columns
+        .column.is-12
+          button.button(@click="toggleDialog") Scanear Codigo
+      .columns(v-for="(quantity, index) in items")
+        .column.is-12.is-mobile-12
           input.input(disabled, v-for="qr in qrContent", v-model="qr.id")
       .columns
         .column
@@ -31,7 +46,7 @@
     .modal(:class="isDialogActive")
       .modal-background
       .modal-content
-        qrcode-reader(@decode="onDecode", @init="onInit", :paused="paused" )  QR Scaner
+        qrcode-reader(@decode="onDecode")  QR Scaner
 
 </template>
 
@@ -51,10 +66,17 @@
         this.items = this.items + 1;
       },
       validateReserve() {
-        this.$toast.open({
-          message: 'Lote de Contenedores Creado Correctamente',
-          type: 'is-success',
-        });
+        if (this.qrContent.length === 0) {
+          this.$toast.open({
+            message: 'Error en la creacion de Lote',
+            type: 'is-danger',
+          });
+        } else {
+          this.$toast.open({
+            message: 'Lote de Contenedores Creado Correctamente',
+            type: 'is-success',
+          });
+        }
       },
       toggleDialog() {
         if (this.isDialogActive === 'is-active') {
