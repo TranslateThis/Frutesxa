@@ -2,19 +2,19 @@
   .section
     .Container
       .columns.is-mobile
-        .column
+        .column.is-mobile
           b-field(label="Estado")
             b-select(placeholder="Seleccionar", required)
               option Opcion 1
               option Opcion 2
               option Opcion 3
-        .column
+        .column.is-mobile
           b-field(label="Etapa")
             b-select(placeholder="Seleccionar", required)
               option Opcion 1
               option Opcion 2
               option Opcion 3
-        .column
+        .column.is-mobile
           b-field(label="Linea de OT")
             b-select(placeholder="Seleccionar", required)
               option Opcion 1
@@ -43,7 +43,6 @@
       return {
         isDialogActive: '',
         qrContent: [],
-        paused: false,
         items: 1,
       };
     },
@@ -66,7 +65,6 @@
       },
       onDecode(content) {
         this.qrContent.push({ id: content });
-        this.paused = true;
         this.toggleDialog();
       },
     },
