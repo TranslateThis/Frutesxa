@@ -10,20 +10,17 @@
             .decoded-content(v-if="content") {{content}}
       .columns
         .column
-          router-link.button(:to='"/containerView/"+id') Confirmar
+          router-link.button(to="/container") Confirmar
             
 
 </template>
 
 <script>
-  import QrcodeReader from 'vue-qrcode-reader';
 
   export default {
     name: 'Container',
-    components: { QrcodeReader },
     data() {
       return {
-        id: '',
       };
     },
     methods: {
