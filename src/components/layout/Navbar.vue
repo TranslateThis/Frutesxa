@@ -29,5 +29,10 @@ export default {
 </script>
 
 <style scoped>
-
+.navbar-menu {
+  display: inline;
+}
+.field.is-grouped {
+    justify-content: flex-end;
+}
 </style>

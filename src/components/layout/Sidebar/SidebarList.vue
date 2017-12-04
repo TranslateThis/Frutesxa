@@ -88,12 +88,11 @@
   };
 </script>
 
+</script>
+
 <style>
 #app > .columns {
   margin: 0!important;
-}
-.logo {
-  padding-bottom: 40px;
 }
 .sidebar {
   width: 250px;
@@ -146,7 +145,6 @@
   border-left: 3px solid #d8a8cd;
   background-color: #a36394;
 }
-
 .nav-side-menu ul .sub-menu li.active,
 .nav-side-menu li .sub-menu li.active {
   color: #e2add5;
@@ -168,7 +166,6 @@
 .nav-side-menu li .sub-menu li:hover {
   background-color: #020203;
 }
-
 .nav-side-menu ul .sub-menu a:before,
 .nav-side-menu li .sub-menu a:before {
   font-family: 'Material Design Icons';
@@ -185,10 +182,19 @@
 }
 .nav-side-menu li a {
   text-decoration: none;
-  color: #e1ffff;
+  color: #fff;
   display: inline-block;
   text-decoration: none!important;
   width: 100%;
+}
+.nav-side-menu .menu-list.active li:hover {
+    width: 200px;
+    background: #4d2e47;
+    z-index: 99999;
+    position: absolute;
+}
+.nav-side-menu .menu-list.active li:hover span {
+    display: inline-block;
 }
 .nav-side-menu .collapse button i,
 .nav-side-menu li a i {
