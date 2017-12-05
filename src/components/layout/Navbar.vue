@@ -16,7 +16,7 @@ nav.navbar
                     i.mdi.mdi-bell-outline
               p.control
                  a.button.is-primary.is-inverted.is-outlined
-                  img(src="./../../assets/UserLogo.png") 
+                  img(src="https://translatethis.github.io/Frutexsa/dist/UserLogo.png") 
                   span Usuario
                   span.icon
                     i.mdi.mdi-chevron-down

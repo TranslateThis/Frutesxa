@@ -1,11 +1,11 @@
 <template lang="pug">
   .columns
     .column.is-4.is-mobile-12
-      img(src="./../assets/ID1.jpg")
+      img(src="https://translatethis.github.io/Frutexsa/dist/ID1.jpg")
     .column.is-4.is-mobile-12
-      img(src="./../assets/ID2.jpg")
+      img(src="https://translatethis.github.io/Frutexsa/dist/ID2.jpg")
     .column.is-4.is-mobile-12
-      img(src="./../assets/ID3.jpg")
+      img(src="https://translatethis.github.io/Frutexsa/dist/ID3.jpg")
 </template>
 
 <script>
