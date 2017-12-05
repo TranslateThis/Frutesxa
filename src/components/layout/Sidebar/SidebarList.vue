@@ -28,36 +28,40 @@
         active: false,
         items: [{
           name: 'Home',
-          url: '/',
+          url: '/Frutexsa',
           icon: 'mdi-home',
         }, {
           name: 'Contenedor',
           url: '/',
           childrens: [{
             name: 'Consulta de ID',
-            url: '/containerView',
+            url: '/Frutexsa/containerView',
           }, {
             name: 'Reservar para OT',
-            url: '/containerReserve',
+            url: '/Frutexsa/containerReserve',
           }, {
             name: 'Ingresar a OT',
-            url: '/containerReserve',
+            url: '/Frutexsa/containerReserve',
           }],
         }, {
           name: 'Inventario de Contendedores',
-          url: '/About',
+          url: '/Frutexsa/About',
           icon: 'mdi-archive',
         }, {
           name: 'Inventario de Insumos',
-          url: '/About',
+          url: '/Frutexsa/About',
           icon: 'mdi-chart-line',
         }, {
           name: 'Packing List',
-          url: '/About',
+          url: '/Frutexsa/About',
           icon: 'mdi-chart-timeline',
         }, {
+          name: 'QrCodes',
+          url: '/Frutexsa/qrCodes',
+          icon: 'mdi-account-multiple',
+        }, {
           name: 'About Us',
-          url: '/About',
+          url: '/Frutexsa/About',
           icon: 'mdi-account-multiple',
         }],
       };

@@ -11,7 +11,7 @@
           a.button(@click="toggleDialog") Scanear Codigo
       .columns
         .column
-          router-link.button(:to='"/containerView/" + qrCode') Consultar
+          router-link.button(:to='"/Frutexsa/containerView/" + qrCode') Consultar
   
     .modal(:class="isDialogActive")
       .modal-background
