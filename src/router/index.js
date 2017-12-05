@@ -7,32 +7,32 @@ import QrCodes from './../pages/QrCodes.vue';
 
 const routes = [
   {
-    path: '/',
+    path: '/Frutexsa',
     component: Home,
     name: 'home',
   },
   {
-    path: '/containerView',
+    path: '/Frutexsa/containerView',
     component: ContainerView,
     name: 'containerView',
   },
   {
-    path: '/qrCodes',
+    path: '/Frutexsa/qrCodes',
     component: QrCodes,
     name: 'QrCodes',
   },
   {
-    path: '/containerView/:id',
+    path: '/Frutexsa/containerView/:id',
     component: ContainerViewDetails,
     name: 'containerViewDetails',
   },
   {
-    path: '/containerReserve',
+    path: '/Frutexsa/containerReserve',
     component: ContainerReserve,
     name: 'containerReserve',
   },
   {
-    path: '/about',
+    path: '/Frutexsa/about',
     component: About,
     name: 'about',
   },
