@@ -16,7 +16,6 @@
       .columns
         .column.is-12
           a.button(@click="toggleDialog") Scanear Codigo
-          
       .columns(v-for="(qr, index) in qrContent")
         .column.is-8.is-mobile-8
           .field.has-addons
