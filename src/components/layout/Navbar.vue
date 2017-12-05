@@ -1,8 +1,6 @@
 <template lang="pug">
 nav.navbar
-      .navbar-brand
       #navMenuColorlight-example.navbar-menu
-        .navbar-start
         .navbar-end
           .navbar-item
             .field.is-grouped

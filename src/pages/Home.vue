@@ -1,8 +1,7 @@
 <template lang="pug">
-    .columns.is-mobile.is-multiline
-        .column 
-            h1.title Home
-    </div>
+  .section
+    .Container
+      h1.title Home
 </template>
 
 <script>

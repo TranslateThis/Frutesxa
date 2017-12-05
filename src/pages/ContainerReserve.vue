@@ -1,6 +1,7 @@
 <template lang="pug">
   .section
     .Container
+      h1.title Reserva de Contenedores
       .columns
         .column.is-4.is-mobile-12
           b-field(label="Proceso")
@@ -15,7 +16,7 @@
             b-input(v-model="OTLineInput") 
       .columns
         .column.is-12
-          a.button(@click="toggleDialog") Scanear Codigo
+          a.button.is-primary(@click="toggleDialog") Scanear Codigo
       .columns(v-for="(qr, index) in qrContent")
         .column.is-8.is-mobile-8
           .field.has-addons
@@ -26,13 +27,13 @@
                 i.mdi.mdi-close
       .columns
         .column
-          a.button.is-light(@click="validateReserve") Reservar
+          a.button.is-primary(@click="validateReserve") Reservar
 
     .modal(:class="isDialogActive")
       .modal-background
       .modal-content
-        qrcode-reader(@decode="onDecode")  QR Scaner
-
+        qrcode-reader(@decode="onDecode")  
+      button.modal-close.is-large(aria-label="close", @click="toggleDialog")
 </template>
 
 <script>
@@ -81,7 +82,7 @@
       validateReserve() {
         if (this.qrContent.length === 0) {
           this.$toast.open({
-            message: 'Error en la creacion de Lote',
+            message: 'Error en la creacion de Lote: Lista de Contenedores Vacia',
             type: 'is-danger',
           });
         } else {

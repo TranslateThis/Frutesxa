@@ -3,6 +3,11 @@ import About from './../pages/About.vue';
 import ContainerView from './../pages/ContainerView.vue';
 import ContainerViewDetails from './../pages/ContainerViewDetails.vue';
 import ContainerReserve from './../pages/ContainerReserve.vue';
+import ContainerAdd from './../pages/ContainerAdd.vue';
+import ContainerInventory from './../pages/ContainerInventory.vue';
+import SuppliesInventory from './../pages/SuppliesInventory.vue';
+import PackingList from './../pages/PackingList.vue';
+
 import QrCodes from './../pages/QrCodes.vue';
 
 const routes = [
@@ -32,7 +37,27 @@ const routes = [
     name: 'containerReserve',
   },
   {
-    path: '/Frutexsa/about',
+    path: '/Frutexsa/containerAdd',
+    component: ContainerAdd,
+    name: 'containerAdd',
+  },
+  {
+    path: '/Frutexsa/containerInventory',
+    component: ContainerInventory,
+    name: 'containerInventory',
+  },
+  {
+    path: '/Frutexsa/suppliesInventory',
+    component: SuppliesInventory,
+    name: 'suppliesInventory',
+  },
+  {
+    path: '/Frutexsa/packingList',
+    component: PackingList,
+    name: 'packingList',
+  },
+  {
+    path: '/Frutexsa/aboutUs',
     component: About,
     name: 'about',
   },

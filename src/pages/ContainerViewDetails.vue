@@ -1,7 +1,7 @@
 <template lang="pug">
   .section
-    h1.title Consulta de Contenedor
     .Container
+      h1.title Consulta de Contenedor
       .columns
         .column.is-6
           label ID:

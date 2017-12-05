@@ -1,18 +1,15 @@
 <template lang="pug">
   .section
     .Container
-      h1.title About Us
-    
+      h1.title Inventario de Insumos
 </template>
 
 <script>
-export default {
-  name: 'About',
-};
+  export default {
+    name: 'SuppliesInventory',
+  };
 </script>
 
 <style scoped>
-.column {
-    margin: 10px
-}
+
 </style>

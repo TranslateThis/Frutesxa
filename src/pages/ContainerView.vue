@@ -6,17 +6,18 @@
           h1.title Consulta de Contenedor
       .columns.is-mobile
         .column
-          input.input(disabled, v-model="qrCode")
+          input.input(disabled, placeholder="CodigoQR Ingresado", v-model="qrCode")
         .column
-          a.button(@click="toggleDialog") Scanear Codigo
+          a.button.is-primary(@click="toggleDialog") Scanear Codigo
       .columns
         .column
-          router-link.button(:to='"/Frutexsa/containerView/" + qrCode') Consultar
+          router-link.button.is-primary(:to='"/Frutexsa/containerView/" + qrCode') Consultar
   
     .modal(:class="isDialogActive")
       .modal-background
       .modal-content
-        qrcode-reader(@decode="onDecode")  QR Scaner
+        qrcode-reader(@decode="onDecode")
+      button.modal-close.is-large(aria-label="close", @click="toggleDialog")
 
 </template>
 

@@ -41,19 +41,19 @@
             url: '/Frutexsa/containerReserve',
           }, {
             name: 'Ingresar a OT',
-            url: '/Frutexsa/containerReserve',
+            url: '/Frutexsa/containerAdd',
           }],
         }, {
           name: 'Inventario de Contendedores',
-          url: '/Frutexsa/About',
+          url: '/Frutexsa/containerInventory',
           icon: 'mdi-archive',
         }, {
           name: 'Inventario de Insumos',
-          url: '/Frutexsa/About',
+          url: '/Frutexsa/suppliesInventory',
           icon: 'mdi-chart-line',
         }, {
           name: 'Packing List',
-          url: '/Frutexsa/About',
+          url: '/Frutexsa/packingList',
           icon: 'mdi-chart-timeline',
         }, {
           name: 'QrCodes',
@@ -61,7 +61,7 @@
           icon: 'mdi-account-multiple',
         }, {
           name: 'About Us',
-          url: '/Frutexsa/About',
+          url: '/Frutexsa/aboutUs',
           icon: 'mdi-account-multiple',
         }],
       };
@@ -190,15 +190,6 @@
   display: inline-block;
   text-decoration: none!important;
   width: 100%;
-}
-.nav-side-menu .menu-list.active li:hover {
-    width: 200px;
-    background: #4d2e47;
-    z-index: 99999;
-    position: absolute;
-}
-.nav-side-menu .menu-list.active li:hover span {
-    display: inline-block;
 }
 .nav-side-menu .collapse button i,
 .nav-side-menu li a i {
