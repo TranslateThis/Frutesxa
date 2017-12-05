@@ -38,8 +38,8 @@
           this.isDialogActive = 'is-active';
         }
       },
-      onDecode(code) {
-        this.qrCode = code;
+      onDecode(content) {
+        this.qrCode = content;
         this.toggleDialog();
       },
     },
