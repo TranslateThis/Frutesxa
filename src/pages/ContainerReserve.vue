@@ -104,7 +104,7 @@
       },
       onDecode(content) {
         this.qrContent.push({ Id: content });
-        // this.toggleDialog();
+        this.toggleDialog();
       },
     },
   };
