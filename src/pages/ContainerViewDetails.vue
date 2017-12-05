@@ -5,7 +5,7 @@
       .columns
         .column.is-6
           label ID:
-          input.input(disabled, v-model="info.Id")
+          input.input(disabled, v-model="$route.params.id")
         .column.is-6
           label Item: 
           input.input(disabled, v-model="info.Item")
@@ -64,7 +64,6 @@
     data() {
       return {
         info: {
-          Id: 627415,
           Item: 'ARFL1011CHUM',
           Version: 0,
           Descripcion: 'Autumn Royal 1011 Cinta Húmeda',

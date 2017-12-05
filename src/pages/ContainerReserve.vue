@@ -16,13 +16,14 @@
       .columns
         .column.is-12
           a.button(@click="toggleDialog") Scanear Codigo
-      .columns(v-for="(quantity, index) in items")
+          
+      .columns(v-for="(qr, index) in qrContent")
         .column.is-8.is-mobile-8
           .field.has-addons
             .control
-              input.input(type="text", v-for="qr in qrContent", v-model="qr.id", disabled)
+              input.input.is-rounded(type="text", v-model="qr.Id", disabled)
             .control
-              a.button.is-primary
+              a.button.is-primary(@click="deleteItem(index)")
                 i.mdi.mdi-close
       .columns
         .column
@@ -43,7 +44,6 @@
       return {
         isDialogActive: '',
         qrContent: [],
-        items: 0,
         stageSelected: undefined,
         processSelected: undefined,
         OTLineInput: undefined,
@@ -76,11 +76,8 @@
       };
     },
     methods: {
-      addItem() {
-        this.items = this.items + 1;
-      },
-      deleteItem() {
-        this.items = this.items - 1;
+      deleteItem(index) {
+        this.$delete(this.qrContent, index);
       },
       validateReserve() {
         if (this.qrContent.length === 0) {
@@ -106,8 +103,8 @@
         }
       },
       onDecode(content) {
-        this.qrContent.push({ id: content });
-        this.toggleDialog();
+        this.qrContent.push({ Id: content });
+        // this.toggleDialog();
       },
     },
   };

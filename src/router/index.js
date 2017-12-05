@@ -3,6 +3,7 @@ import About from './../pages/About.vue';
 import ContainerView from './../pages/ContainerView.vue';
 import ContainerViewDetails from './../pages/ContainerViewDetails.vue';
 import ContainerReserve from './../pages/ContainerReserve.vue';
+import QrCodes from './../pages/QrCodes.vue';
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     path: '/containerView',
     component: ContainerView,
     name: 'containerView',
+  },
+  {
+    path: '/qrCodes',
+    component: QrCodes,
+    name: 'QrCodes',
   },
   {
     path: '/containerView/:id',

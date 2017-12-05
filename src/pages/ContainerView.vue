@@ -6,12 +6,12 @@
           h1.title Consulta de Contenedor
       .columns.is-mobile
         .column
-          input.input(disabled, v-model="qrContent")
+          input.input(disabled, v-model="qrCode")
         .column
           a.button(@click="toggleDialog") Scanear Codigo
       .columns
         .column
-          router-link.button(:to='"/containerView/" + qrContent') Consultar
+          router-link.button(:to='"/containerView/" + qrCode') Consultar
   
     .modal(:class="isDialogActive")
       .modal-background
@@ -26,7 +26,7 @@
     data() {
       return {
         isDialogActive: '',
-        qrContent: null,
+        qrCode: null,
       };
     },
     methods: {
@@ -37,8 +37,8 @@
           this.isDialogActive = 'is-active';
         }
       },
-      onDecode(content) {
-        this.qrContent = content;
+      onDecode(code) {
+        this.qrCode = code;
         this.toggleDialog();
       },
     },
