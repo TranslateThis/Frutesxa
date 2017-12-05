@@ -103,7 +103,12 @@
         }
       },
       onDecode(content) {
+        this.content = Math.ceil(Math.random() * 10000);
         this.qrContent.push({ Id: content });
+        this.$toast.open({
+          message: 'Codigo Leido Exitosamente',
+          type: 'is-success',
+        });
         this.toggleDialog();
       },
     },
