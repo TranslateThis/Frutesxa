@@ -3,16 +3,16 @@
   .sidebar(:style="'min-height: '+height+'px'", :class="{ active: active }")
     .nav-side-menu
       .brand 
-        span Frutesxa
+        span.span Frutexsa
         button(class="navbar-burger", @click="toggle()")
           span
           span
           span
-        
+
       i.fa.fa-bars.fa-2x.toggle-btn(data-toggle='collapse', data-target='#menu-content')
       .menu-list(:class="{ active: active }")
         ul#menu-content.menu-content
-          vl-sidebar-item(v-for="item in items", :item="item")
+          vl-sidebar-item(v-for="item in items", :item="item", @itemToggle="toggle")
 </template>
 
 <script>
@@ -138,10 +138,9 @@
 .nav-side-menu li :not(collapsed) .arrow:before {
   font-family: 'Material Design Icons';
   content: "\F140";
-  display: inline-block;
+  display: block;
   padding-left: 10px;
   padding-right: 10px;
-  vertical-align: middle;
   float: right;
 }
 .nav-side-menu ul .active,
@@ -258,7 +257,7 @@ body {
   position: relative;
   width: 3.25rem;
   margin-left: auto;
-  display: inline-block;
+  display: block;
   float: right;
   background: none;
   border: none;

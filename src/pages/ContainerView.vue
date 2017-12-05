@@ -40,7 +40,7 @@
       },
       onDecode(content) {
         this.qrCode = content;
-        this.qrCode = Math.ceil(Math.random() * 10000);
+        this.qrCode = Math.ceil(Math.random() * 100);
         this.$toast.open({
           message: 'Codigo Leido Exitosamente',
           type: 'is-success',
