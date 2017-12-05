@@ -4,7 +4,7 @@
     .nav-side-menu
       .brand 
         span.span Frutexsa
-        button(class="navbar-burger", @click="toggle()")
+        button(class="navbar-burger", @click="toggleSpan")
           span
           span
           span
@@ -75,8 +75,15 @@
       });
     },
     methods: {
-      toggle() {
+      toggleSpan() {
         this.active = !this.active;
+      },
+      toggle() {
+        if (this.width > 768) {
+          this.active = this.active;
+        } else {
+          this.active = !this.active;
+        }
       },
       getWindowWidth() {
         this.width = document.documentElement.clientWidth;
