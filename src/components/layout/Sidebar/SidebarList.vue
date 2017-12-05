@@ -56,10 +56,6 @@
           url: '/Frutexsa/packingList',
           icon: 'mdi-chart-timeline',
         }, {
-          name: 'QrCodes',
-          url: '/Frutexsa/qrCodes',
-          icon: 'mdi-account-multiple',
-        }, {
           name: 'About Us',
           url: '/Frutexsa/aboutUs',
           icon: 'mdi-account-multiple',
@@ -67,7 +63,7 @@
       };
     },
     mounted() {
-      this.$nextTick(function () {
+      this.$nextTick(function callback() {
         window.addEventListener('resize', this.getWindowWidth);
         window.addEventListener('resize', this.getWindowHeight);
         this.getWindowWidth();

@@ -18,7 +18,7 @@ export default {
   },
   components: { VlNavbar },
   mounted() {
-    this.$nextTick(function () {
+    this.$nextTick(function callback() {
       window.addEventListener('resize', this.getWindowWidth);
       window.addEventListener('resize', this.getWindowHeight);
       this.getWindowWidth();

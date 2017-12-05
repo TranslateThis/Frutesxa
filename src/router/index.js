@@ -8,8 +8,6 @@ import ContainerInventory from './../pages/ContainerInventory.vue';
 import SuppliesInventory from './../pages/SuppliesInventory.vue';
 import PackingList from './../pages/PackingList.vue';
 
-import QrCodes from './../pages/QrCodes.vue';
-
 const routes = [
   {
     path: '/Frutexsa',
@@ -20,11 +18,6 @@ const routes = [
     path: '/Frutexsa/containerView',
     component: ContainerView,
     name: 'containerView',
-  },
-  {
-    path: '/Frutexsa/qrCodes',
-    component: QrCodes,
-    name: 'QrCodes',
   },
   {
     path: '/Frutexsa/containerView/:id',
