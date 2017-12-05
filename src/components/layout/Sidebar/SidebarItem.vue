@@ -1,7 +1,7 @@
 <template lang="pug">
 li
     b-collapse(:open='false', v-if="item.childrens")
-        a(href='#').collapsed(slot='trigger') 
+        a.collapsed(slot='trigger', href='#') 
             i.mdi.mdi-arrow-down-drop-circle-outline
             span {{item.name}}
             span.arrow

@@ -12,7 +12,7 @@
       i.fa.fa-bars.fa-2x.toggle-btn(data-toggle='collapse', data-target='#menu-content')
       .menu-list(:class="{ active: active }")
         ul#menu-content.menu-content
-          vl-sidebar-item(v-for="item in items", :item="item", @itemToggle="toggle")
+          vl-sidebar-item(v-for="item in items", :item="item", :key="item.name" @itemToggle="toggle")
 </template>
 
 <script>
